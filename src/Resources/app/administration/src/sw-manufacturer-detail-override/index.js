@@ -22,14 +22,15 @@ Shopware.Component.override('sw-manufacturer-detail', {
                 );
 
                 this.manufacturerGpsrRepository.search(criteria, Shopware.Context.api)
-                    .then(result => {
+                    .then(async result => {
                         if (!result.first()) {
                             let productManufacturerGpsrEntity = this.manufacturerGpsrRepository.create(Shopware.Context.api);
                             productManufacturerGpsrEntity.productManufacturerId = this.manufacturer.id;
 
-                            productManufacturerGpsrEntity = this.manufacturerGpsrRepository.save(productManufacturerGpsrEntity, Shopware.Context.api);
+                            await this.manufacturerGpsrRepository.save(productManufacturerGpsrEntity, Shopware.Context.api);
+                            const manufacturerGpsr = await this.manufacturerGpsrRepository.get(productManufacturerGpsrEntity.id, Shopware.Context.api)
 
-                            this.manufacturer.extensions.productManufacturerGpsr = productManufacturerGpsrEntity;
+                            this.manufacturer.extensions.productManufacturerGpsr = manufacturerGpsr;
                         } else {
                             this.manufacturer.extensions.productManufacturerGpsr = result.first();
                         }
