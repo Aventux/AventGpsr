@@ -5,6 +5,18 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <service id="Avent\Gpsr\Core\Content\ProductManufacturerGpsr\ProductManufacturerGpsrDefinition">
+            <tag name="shopware.entity.definition" />
+        </service>
+        <service id="Avent\Gpsr\Core\Content\ProductManufacturerGpsr\Aggregate\ProductManufacturerGpsrTranslationDefinition">
+            <tag name="shopware.entity.definition" entity="product_manufacturer_gpsr_translation"/>
+        </service>
+        <service id="Avent\Gpsr\Core\Content\ProductManufacturerExtension\ProductManufacturerExtension">
+            <tag name="shopware.entity.extension" />
+        </service>
 
+        <service id="Avent\Gpsr\Subscriber\ProductDetailPageSubscriber">
+            <tag name="kernel.event_subscriber" />
+        </service>
     </services>
 </container>

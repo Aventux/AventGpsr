@@ -1,0 +1,22 @@
+{% sw_extends "@Storefront/storefront/component/product/description.html.twig" %}
+
+{% block component_product_description_content %}
+    {{ parent() }}
+
+    {% block component_product_description_gpsr_title %}
+        {% if product.manufacturer.extensions.productManufacturerGpsr %}
+            <h3 class="product-detail-description-title">
+                {{ 'avent.manufacturerGpsr.headline'|trans|sw_sanitize }}
+            </h3>
+        {% endif %}
+    {% endblock %}
+
+    {% block component_product_description_gpsr_content_text %}
+        {% if product.manufacturer.extensions.productManufacturerGpsr %}
+            <div class="product-detail-description-text"
+                 itemprop="description">
+                {{ product.manufacturer.extensions.productManufacturerGpsr.translated.description|raw }}
+            </div>
+        {% endif %}
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,13 @@
+
+{% block sw_manufacturer_detail_base_info_field_description %}
+    {% parent %}
+
+    <sw-text-editor
+            v-if="manufacturer.extensions.productManufacturerGpsr"
+            v-model:value="manufacturer.extensions.productManufacturerGpsr.description"
+            :label="$tc('avent.manufacturerGpsr.labelManufacturerInfo')"
+            name="gpsrDescription"
+            sanitize-input
+            sanitize-field-name="product_manufacturer_gpsr_translation.description"
+    />
+{% endblock %}
