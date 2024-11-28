@@ -1,0 +1,34 @@
+{
+    "name": "avent-gpsr/avent-gpsr",
+    "description": "avent-gpsr/avent-gpsr",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.6.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "Avent\\Gpsr\\AventGpsr",
+        "label": {
+            "de-DE": "Einfaches GPSR auf Herstellerebene",
+            "en-GB": "Easy GPSR at manufacturer level"
+        },
+        "description": {
+            "de-DE": "Implementierung der GPSR (Allgemeine Produktsicherheitsanforderungen) auf Herstellerebene. Dieses Plugin erleichtert die Einhaltung der gesetzlichen Vorschriften für Shop-Besitzer.",
+            "en-GB": "Implementation of the GPSR (General Product Safety Requirements) at manufacturer level. This plugin facilitates compliance with legal requirements for store-owner."
+        },
+        "manufacturerLink": {
+            "de-DE": "https://aventux.com",
+            "en-GB": "https://aventux.com"
+        },
+        "supportLink": {
+            "de-DE": "https://aventux.com",
+            "en-GB": "https://aventux.com"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Avent\\Gpsr\\": "src/"
+        }
+    }
+}
