@@ -31,8 +31,10 @@ Shopware.Component.override('sw-manufacturer-detail', {
                             const manufacturerGpsr = await this.manufacturerGpsrRepository.get(productManufacturerGpsrEntity.id, Shopware.Context.api)
 
                             this.manufacturer.extensions.productManufacturerGpsr = manufacturerGpsr;
+                            this.manufacturerGpsr = this.manufacturer.extensions.productManufacturerGpsr;
                         } else {
                             this.manufacturer.extensions.productManufacturerGpsr = result.first();
+                            this.manufacturerGpsr = this.manufacturer.extensions.productManufacturerGpsr;
                         }
                     });
 

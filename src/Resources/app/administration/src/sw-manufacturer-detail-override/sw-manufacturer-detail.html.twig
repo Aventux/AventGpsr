@@ -3,8 +3,8 @@
     {% parent %}
 
     <sw-text-editor
-            v-if="manufacturer.extensions.productManufacturerGpsr"
-            v-model:value="manufacturer.extensions.productManufacturerGpsr.description"
+            v-if="manufacturerGpsr"
+            v-model="manufacturer.extensions.productManufacturerGpsr.description"
             :label="$tc('avent.manufacturerGpsr.labelManufacturerInfo')"
             name="gpsrDescription"
             sanitize-input
