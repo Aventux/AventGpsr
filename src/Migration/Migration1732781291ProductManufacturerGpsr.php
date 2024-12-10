@@ -34,4 +34,9 @@ class Migration1732781291ProductManufacturerGpsr extends MigrationStep
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
     ');
     }
+
+    public function updateDestructive(Connection $connection): void
+    {
+        $connection->executeStatement('DROP TABLE IF EXISTS `product_manufacturer_gpsr`;');
+    }
 }
