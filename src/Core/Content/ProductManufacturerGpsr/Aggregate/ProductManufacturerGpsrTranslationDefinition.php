@@ -5,6 +5,7 @@ namespace Avent\Gpsr\Core\Content\ProductManufacturerGpsr\Aggregate;
 use Avent\Gpsr\Core\Content\ProductManufacturerGpsr\ProductManufacturerGpsrDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityTranslationDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\CreatedAtField;
+use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\AllowHtml;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\ApiAware;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\LongTextField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\UpdatedAtField;
@@ -44,7 +45,7 @@ class ProductManufacturerGpsrTranslationDefinition extends EntityTranslationDefi
     protected function defineFields(): FieldCollection
     {
         return new FieldCollection([
-            (new LongTextField('description', 'description'))->addFlags(new ApiAware()),
+            (new LongTextField('description', 'description'))->addFlags(new ApiAware(), new AllowHtml()),
 
             (new CreatedAtField()),
             (new UpdatedAtField())
